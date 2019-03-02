@@ -20,14 +20,15 @@ class Handler(FileSystemEventHandler):
             self.last_mod_time = current_mod_time
 
         self.close_reader()
+        
+        self.pdflatex()
+        self.biblatex()
+        self.pdflatex()
         self.pdflatex()
 
-        if '.bib' in event.src_path:
-            self.biblatex()
-            self.pdflatex()
-            self.pdflatex()
-
         self.open_reader()
+        self.clean()
+
         print('\nLatexmon waiting for changes...')
 
     def pdflatex(self):
@@ -44,7 +45,7 @@ class Handler(FileSystemEventHandler):
             os.system("TASKKILL /F /IM AcroRd32.exe")
 
     def clean(self):
-        for ext in ['*.aux', '*.log', '*.bbl', '*blg', '*.out', '*.log']:
+        for ext in ['*.aux', '*.log', '*.bbl', '*.blg', '*.out', '*.log']:
             for file in glob.glob(ext):
                 shutil.move(file, os.path.join('logs', file))
 
