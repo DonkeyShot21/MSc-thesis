@@ -1,3 +1,23 @@
-\chapter{Impostazione del problema di ricerca}
+\chapter{State of the Art}
 \label{capitolo3}
 \thispagestyle{empty}
+
+\noindent In this chapter the main challenges of automatic sunspot detection are analysed and several state of the art algorithms that overcome those challenges are presented, together with an explanation of their advantages and disadvantages. Also, the reader will understand the reason why being able to automatically segment and group images of the Sun is so critically important. Manually drawing the contours of dark patches with white background can look trivial to the inexperienced eye but centuries of disagreements among scientist on that matter demonstrated that this is actually not the case. In fact, irregularities in the shape of the sunspots and their variable intensity and contrast with the surroundings, make their automated detection from digital images difficult \cite{curto2008automatic}. Similarly, automatically clustering sunspots into groups, taking into account the properties of magnetic field, has revealed itself to be a rather complex task. In the past, given the moderate quantity of data available to the scientists, it was quite easy to label all the images. During the years technological development progressively enhanced the quality datasets at our disposal. From December 1995, when the SOHO mission was launched, the Sun has been under almost constant human surveillance from space. Since then, the space telescope has delivered a daily stream of 250MB of solar data back to researchers on Earth. With 12 instruments on board, probing every area of our star - from its interior out to the corona and the solar wind - SOHO has compiled a vast library of solar data. This solar work of art is beginning to be complemented by SDO, which is returning 1.5TB of data per day. At 6000 times the data rate of SOHO, and containing a constant stream of high-resolution images of the Sun over 10 spectral channels, the volume of data from SDO has made it necessary to develop new ways of analysing the data \cite{esa-soho}. \\
+In the early stages of the development of this thesis traditional image processing appraches have been explored in order to tackle sunspot detection. Unfortunately methods like edge detection \cite{canny1987computational}, or simple segmentation algorithms like watershed transform \cite{beucher1992watershed} or histogram clustering \cite{puzicha1999histogram} are simply not powerful enough to yield acceptable performance on this task. On one hand both edge detection and watershed fail badly, tending to get confused by the noise introduced by convection cells, and ending up overdetecting. Hyperparameter tuning can possibly help in many cases but it is impossible to find the right values in order for the methods to generalize on unseen images. Even selecting ad-hoc parameters the detection performances remain very poor. Such a strong evidence testifies that the above-mentioned approaches are not suitable solutions to the problem this work aims to tackle. On the other hand, even though histogram clustering is a very na\"{i}ve approach and yields poor performance on the general segmentation task, later on in this thesis it will be shown that very simple clustering algorithms are able to distinguish umbrae from penumbrae given the mask of the selected sunspot and its classification.\\ \\
+QUESTA PARTE \'{E} SOLO UNA BOZZA \\ \\
+During the last decade more complex algorithms have emerged:
+\begin{itemize}
+  \item \textbf{SMART} \cite{higgins2011solar}:
+  \item \textbf{ASAP} \cite{colak2009automated}:
+  \item \textbf{STARA} \cite{watson2009modelling}:
+  \item \textbf{SPoCA} \cite{barra2009fast}:
+\end{itemize}
+Another related algorithm SOTA, uses deep learning:
+\begin{itemize}
+  \item \textbf{FlareNet} \cite{McGregor2017}:
+\end{itemize} 
+Finally something on group classification:
+\begin{itemize}
+  \item \textbf{decision trees, rough sets, hierarchical clustering} \cite{nguyen2006learning}:
+  \item \textbf{decision rules, decision trees} \cite{colak2007automatic}
+\end{itemize}
