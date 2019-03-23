@@ -12,6 +12,8 @@
 \hyphenation{a-gen-tiz-za-zio-ne}
 % \expandafter\def\csname ver@subfig.sty\endcsname{}
 \usepackage{svg}
+\usepackage{tikz}
+\usetikzlibrary{matrix,chains,positioning,decorations.pathreplacing,arrows}
 
 % \setlength{\paperwidth}{16cm}
 % \setlength{\paperheight}{24cm}
@@ -40,30 +42,30 @@
 \pagestyle{empty}
 
 \begin{document}
-\include{frontespizio}
+% \include{frontespizio}
 \thispagestyle{empty} \normalfont \cleardoublepage
-\include{dedica}
+% \include{dedica}
 \thispagestyle{empty}  \cleardoublepage
 \pagenumbering{Roman}
-\include{sommario}
+% \include{sommario}
 \thispagestyle{empty} \vspace*{.75truecm} \cleardoublepage
-\include{ringraziamenti}
+% \include{ringraziamenti}
 \thispagestyle{empty} \vspace*{.75truecm} \normalfont \cleardoublepage
-\pagestyle{plain}\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter.\ #1}{}} 
-\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}         
-\fancyhead[LE,RO]{\bfseries\thepage}    
-                                        
-\fancyhead[RE]{\bfseries\leftmark}    
-\fancyhead[LO]{\bfseries\rightmark}     
-\renewcommand{\headrulewidth}{0.3pt} 
+\pagestyle{plain}\renewcommand{\chaptermark}[1]{\markboth{\chaptername\ \thechapter.\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+\fancyhead[LE,RO]{\bfseries\thepage}
 
-\include{capitolo1}
-\include{capitolo2}
-\include{capitolo3}
-\include{capitolo4}
+\fancyhead[RE]{\bfseries\leftmark}
+\fancyhead[LO]{\bfseries\rightmark}
+\renewcommand{\headrulewidth}{0.3pt}
+
+% \include{capitolo1}
+% \include{capitolo2}
+% \include{capitolo3}
+% \include{capitolo4}
 \include{capitolo5}
-\include{capitolo6}
-\include{capitolo7}
+% \include{capitolo6}
+% \include{capitolo7}
 
 \cleardoublepage
 % ---- Bibliography ----
@@ -76,26 +78,21 @@
 
 \appendix
 
-\pagestyle{fancy} 
-\fancyfoot{}                                               
-\renewcommand{\chaptermark}[1]{\markboth{\appendixname\ \thechapter.\ #1}{}} 
-\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}         
-\fancyhead[LE,RO]{\bfseries\thepage}    
-                                        
-\fancyhead[RE]{\bfseries\leftmark}    
-\fancyhead[LO]{\bfseries\rightmark}     
-\renewcommand{\headrulewidth}{0.3pt} 
+\pagestyle{fancy}
+\fancyfoot{}
+\renewcommand{\chaptermark}[1]{\markboth{\appendixname\ \thechapter.\ #1}{}}
+\renewcommand{\sectionmark}[1]{\markright{\thesection.\ #1}}
+\fancyhead[LE,RO]{\bfseries\thepage}
 
-\include{appendiceA}
-\include{appendiceB}
-\include{appendiceC}
-\include{appendiceD}
-\include{appendiceE}
-\include{appendiceF}
+\fancyhead[RE]{\bfseries\leftmark}
+\fancyhead[LO]{\bfseries\rightmark}
+\renewcommand{\headrulewidth}{0.3pt}
+
+% \include{appendiceA}
+% \include{appendiceB}
+% \include{appendiceC}
+% \include{appendiceD}
+% \include{appendiceE}
+% \include{appendiceF}
 
 \end{document}
-
-
-
-
-
