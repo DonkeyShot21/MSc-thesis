@@ -15,7 +15,7 @@ Around 2010, probably driven by the launch of SDO (February 11, 2010), automatic
 ASAP is actually a set of algorithms for sunspot, faculae, and active-region detections \cite{colak2008automated} and solar-flare prediction \cite{colak2009automated}. Many versions of this tool exist, the one that best relates to this thesis  was published in 2011 \cite{colak2011representation}. This more recent version uses both continuum intensitygrams and magnetograms (SOHO/MDI) to produce segmented groups of sunspots while previous works also asked for quick look (in GIF or JPEG format) images as input for its processes. The main steps in this algorithm can be summarized as follows:
 \begin{enumerate}
   \item Pre-procesing to detect the solar disk and remove limb darkening;
-  \item Coordinate conversion: detected solar disks are converted from heliocentric coordinates to Carrington heliographic coordinates (see the glossary in Appendix1 for to find information on this matter or refer to \textit{Coordinate systems for solar image data} \cite{thompson2006coordinate} manual).
+  \item Coordinate conversion: detected solar disks are converted from heliocentric coordinates to Carrington heliographic coordinates (see the glossary in Appendix A for to find information on this matter or refer to \textit{Coordinate systems for solar image data} \cite{thompson2006coordinate} manual).
   \item intensity filtering threshold value $T = \mu - (\sigma \times \alpha)$ is applied where $\mu$ is the mean, $\sigma$ is the standard deviation of the image, and $\alpha$ is a constant.
 \end{enumerate}
 \begin{figure}[t]
