@@ -16,6 +16,6 @@ if compile_bib:
 subprocess.call(pdflatex)
 subprocess.Popen(["AcroRd32.exe", 'tesi.pdf'])
 
-for ext in ['*.aux', '*.log', '*.bbl', '*blg', '*.out', '*.log']:
+for ext in ['*.aux', '*.log', '*.bbl', '*blg', '*.out', '*.log', '*.lof']:
     for file in glob.glob(ext):
         shutil.move(file, os.path.join('logs', file))

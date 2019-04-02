@@ -22,4 +22,6 @@ tesi.pdf
 
 *.out
 
+*.lof
+
 logs
